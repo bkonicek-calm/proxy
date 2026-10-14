@@ -775,6 +775,10 @@ func TestEgressAllowlist_NewEntriesDoNotWidenBeyondExactHosts(t *testing.T) {
 		"https://attacker.external-secrets.io/payload",
 		"https://attacker.traefik.io/payload",
 		"https://attacker.tigera.io/payload",
+		"https://attacker.datadoghq.com/payload",
+		"https://attacker.releases.hashicorp.com/payload",
+		"https://attacker.releases.teleport.dev/payload",
+		"https://attacker.wiz.io/payload",
 		// Cloudsmith is multi-tenant with the tenant in the URL path, and the
 		// allowlist authorizes the hostname only. Neither the tenant subdomain
 		// form nor the shared download hosts may be globally allowed.
