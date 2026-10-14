@@ -751,6 +751,12 @@ func TestEgressAllowlist_NewEntriesDoNotWidenBeyondExactHosts(t *testing.T) {
 		"https://evil.traefik.github.io/payload",
 		"https://evil.helm.traefik.io/payload",
 		"https://evil.docs.tigera.io/payload",
+		"https://evil.helm.datadoghq.com/payload",
+		"https://evil.helm.releases.hashicorp.com/payload",
+		"https://evil.charts.releases.teleport.dev/payload",
+		"https://evil.charts.wiz.io/payload",
+		"https://evil.wiz-sec.github.io/payload",
+		"https://evil.fluent.github.io/payload",
 	}
 
 	// Sibling hosts: names sharing a parent with an added entry. These pin the
@@ -955,6 +961,12 @@ func TestEgressAllowlist_AddedMissingDomainsAllowed(t *testing.T) {
 		"https://traefik.github.io/charts/traefik/traefik-41.6.1.tgz",
 		"https://helm.traefik.io/traefik/index.yaml",
 		"https://docs.tigera.io/calico/charts/index.yaml",
+		"https://helm.datadoghq.com/index.yaml",
+		"https://helm.releases.hashicorp.com/index.yaml",
+		"https://charts.releases.teleport.dev/index.yaml",
+		"https://charts.wiz.io/index.yaml",
+		"https://wiz-sec.github.io/charts/wiz-kubernetes-integration-0.2.0.tgz",
+		"https://fluent.github.io/helm-charts/index.yaml",
 		"https://cocoapods.org/pods/AFNetworking",
 	} {
 		assert.Nil(t, egressResult(t, h, allowed), "added host should be allowed: "+allowed)

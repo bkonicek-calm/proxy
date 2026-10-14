@@ -635,6 +635,17 @@ ecosystem_default_domains:
     # Project Calico (Tigera) chart repo, the documented `helm repo add` URL for
     # tigera-operator and crd.projectcalico.org.v1 (tarballs are on github.com).
     - docs.tigera.io
+    # Datadog's chart repo (CNAME to datadog.github.io); tarballs are on github.com.
+    - helm.datadoghq.com
+    # HashiCorp's chart repo (Consul, Vault, Boundary, ...); serves index and tarballs.
+    - helm.releases.hashicorp.com
+    # Teleport's chart repo (CloudFront); index and tarballs are on the same host.
+    - charts.releases.teleport.dev
+    # Wiz's chart repo; charts.wiz.io serves index.yaml, tarballs are on wiz-sec.github.io.
+    - charts.wiz.io
+    - wiz-sec.github.io
+    # Fluent's chart repo (GitHub Pages); tarballs are on github.com.
+    - fluent.github.io
   # GitHub-hosted or per-job configured; covered by github_infra_domains / git.
   # Note: additional per-job dependencies (e.g. pre_commit hooks that install
   # from other ecosystems) are covered because the handler applies the union of
